@@ -6,15 +6,36 @@ backend:
 media_folder: "assets/img/uploads" # Folder where user uploaded files should go
 
 collections:
-  - name: 'blog'
-    label: 'Blog'
-    folder: '_posts/'
+  - name: 'conferences'
+    label: 'Conferences'
+    folder: '_conferences/'
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     editor:
       preview: false
     fields:
-      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'post' }
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'conference' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - {
+          label: 'Author',
+          name: 'author',
+          widget: 'relation',
+          collection: 'authors',
+          display_fields: [display_name],
+          search_fields: [display_name],
+          value_field: 'name',
+        }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: 'media'
+    label: 'Media'
+    folder: '_media/'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'media' }
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - {
@@ -28,14 +49,14 @@ collections:
         }
       - { label: 'Body', name: 'body', widget: 'markdown' }
       
-  - name: 'authors'
-    label: 'Authors'
-    folder: '_authors/'
+  - name: 'speakers'
+    label: 'Speakers'
+    folder: '_speakers/'
     create: true
     editor:
       preview: false
     fields:
-      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'author' }
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'speaker' }
       - { label: 'Short Name', name: 'name', widget: 'string' }
       - { label: 'Display Name', name: 'display_name', widget: 'string' }
       - { label: 'Position', name: 'position', widget: 'string' }
