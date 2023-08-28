@@ -1,0 +1,9 @@
+<h2>Speakers</h2>
+
+<ul>
+  {% for speaker in site.speakers %}
+    <li>
+      <a href="{{ speaker.url }}">{{ speaker.title }}</a>
+    </li>
+  {% endfor %}
+</ul>

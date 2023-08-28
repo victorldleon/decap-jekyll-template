@@ -53,3 +53,13 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+collections:
+  conferences:
+    output: true
+    sort_by: relevance
+  media:
+    output: true
+    sort_by: relevance
+  speakers:
+    output: true
+    sort_by: relevance
