@@ -70,7 +70,7 @@ collections:
         name: 'about'
         file: 'about.md'
         fields:
-          - { label: 'Title', name: 'title', widget: 'hidden', default: 'about' }
+          - { label: 'Title', name: 'title', widget: 'string' }
           - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'about' }
           - { label: 'Body', name: 'body', widget: 'markdown' }
   - name: 'config'
