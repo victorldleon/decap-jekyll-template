@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  background-color: #999;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 16px;
+
+}
