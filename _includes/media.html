@@ -1,0 +1,5 @@
+<p>
+  {{ page.date | date_to_string }} {% assign media = site.media | where: 'name', page.speaker |
+  first %} {% if media %} - <a href="{{ media.url }}">{{ media.display_name }}</a>
+  {% endif %}
+</p>

@@ -5,3 +5,5 @@ layout: default
 
 {% include navigation.html %}
 {% include hero.html %}
+{% include conferences.html %}
+{% include media.html %}
