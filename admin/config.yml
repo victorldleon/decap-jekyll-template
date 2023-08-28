@@ -66,6 +66,13 @@ collections:
     editor:
       preview: false
     files:
+      - label: 'Index Page'
+        name: 'index'
+        file: 'index.md'
+        fields:
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'about' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
       - label: 'About Page'
         name: 'about'
         file: 'about.md'
