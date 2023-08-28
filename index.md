@@ -1,4 +1,5 @@
 ---
+title: This is the title for the index page
 layout: default
 ---
 
