@@ -73,6 +73,13 @@ collections:
           - { label: 'Title', name: 'title', widget: 'string' }
           - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'about' }
           - { label: 'Body', name: 'body', widget: 'markdown' }
+      - label: 'Conferences Page'
+        name: 'conferences'
+        file: 'conferences.md'
+        fields:
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'about' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
       - label: 'About Page'
         name: 'about'
         file: 'about.md'
