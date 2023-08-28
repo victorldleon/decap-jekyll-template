@@ -2,9 +2,9 @@
 items:
   - name: Home
     link: /
-  - name: About
-    link: /about.html
-  - name: Blog
-    link: /blog.html
+  - name: Conferences
+    link: /conferences.html
+  - name: Speaker
+    link: /speaker.html
   - name: Staff
     link: /staff.html
