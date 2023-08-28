@@ -1,4 +1,4 @@
-<!-- _layouts/author.html -->
+<!-- _layouts/speaker.html -->
 --- layout: default ---
 
 <h1>{{ page.display_name }}</h1>
@@ -8,7 +8,7 @@
 
 <h2>Posts</h2>
 <ul>
-  {% assign filtered_posts = site.posts | where: 'author', page.name %} {% for post in
+  {% assign filtered_posts = site.posts | where: 'speaker', page.name %} {% for post in
   filtered_posts %}
   <li>
     <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
