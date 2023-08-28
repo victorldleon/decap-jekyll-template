@@ -1,9 +1,14 @@
-<h2>Conferences</h2>
+--- 
+layout: default 
+---
 
-<ul>
-  {% for conference in site.conferences %}
-    <li>
-      <a href="{{ conference.url }}">{{ conference.title }}</a>
-    </li>
-  {% endfor %}
-</ul>
+<h1>{{ page.title }}</h1>
+
+<p>
+  {{ page.date | date_to_string }} 
+</p>
+
+{% include speakers.html %}
+
+
+{{ content }}
