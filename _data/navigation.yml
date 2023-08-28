@@ -1,10 +1,5 @@
-# _data/navigation.yml
 items:
   - name: Home
     link: /
   - name: Conferences
     link: /conferences.html
-  - name: Speaker
-    link: /speaker.html
-  - name: Staff
-    link: /staff.html
