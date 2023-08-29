@@ -2,8 +2,12 @@
 
 <ul>
   {% for speaker in site.speakers %}
-    <li>
-      <a href="{{ speaker.url }}">{{ speaker.name }}</a>
-    </li>
+    {% for pageSpeaker in page.speaker %}
+      {% if speaker.name == pageSpeaker %}
+        <li>
+          <a href="{{ speaker.url }}">{{ speaker.name }}</a>
+        </li>
+      {% endif %}
+    {% endfor %}
   {% endfor %}
 </ul>
