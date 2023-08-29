@@ -1,5 +1,5 @@
 ---
-title: This is the title for the index page
+title: Conferences page title this goes in the hero
 layout: default
 ---
 
