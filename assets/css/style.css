@@ -5,6 +5,7 @@ body {
 nav {
   display: flex;
   background-color: #999;
+  padding-left: 42px;
 }
 
 nav a {
@@ -13,4 +14,20 @@ nav a {
   text-transform: uppercase;
   padding: 16px;
 
+}
+
+h1,h2 {
+  text-transform: uppercase;
+}
+.hero {
+  align-items: center;
+  background-color: lightskyblue;
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  padding: 64px;
+  width: 100%;
+}
+.container {
+  padding: 42px 64px;
 }
