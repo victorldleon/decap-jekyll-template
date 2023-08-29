@@ -20,6 +20,7 @@ collections:
       - {
           label: 'Speaker',
           name: 'speaker',
+          multiple: true
           widget: 'relation',
           collection: 'speakers',
           display_fields: [display_name],
