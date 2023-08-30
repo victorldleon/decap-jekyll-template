@@ -1,7 +1,7 @@
 items:
-  - name: Conferences
-    link: /conferences.html
   - name: Home
     link: /
-  - name: About
-    link: about.html
+  - name: Conferences
+    link: /conferences.html
+  - name: Admin
+    link: /admin/
