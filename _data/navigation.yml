@@ -1,5 +1,5 @@
 items:
-  - name: Home
-    link: /
   - name: Conferences
     link: /conferences.html
+  - name: Home
+    link: /
