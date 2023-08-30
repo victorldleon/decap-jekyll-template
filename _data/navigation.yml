@@ -3,3 +3,5 @@ items:
     link: /conferences.html
   - name: Home
     link: /
+  - name: About
+    link: about.html
