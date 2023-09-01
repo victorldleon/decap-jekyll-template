@@ -78,14 +78,36 @@ collections:
             widget: 'list'
             fields:
               - { label: 'Include', name: 'include', widget: 'object', fields: [
-                  { label: 'Include Type', name: 'include_type', widget: 'string' },
-                  { label: 'Include Data', name: 'include_data', widget: 'object', fields: [
-                      # Define fields specific to this include type
-                      { label: 'Field 1', name: 'field_1', widget: 'string' },
-                      { label: 'Field 2', name: 'field_2', widget: 'string' },
-                      # Add more fields as needed for different include types
-                  ]}
+                  { label: 'Include Type', name: 'include_type', widget: 'select', options: [
+                      { label: 'Hero', value: 'hero' },
+                      { label: 'Themes Section', value: 'themes' },
+                      # Add more options for different include types
+                  ] },
+                  { label: 'Include Data', name: 'include_data', widget: 'conditional', 
+                    default: {},
+                    conditions: [
+                      { 
+                        label: 'Hero Fields',
+                        value: 'hero',
+                        fields: [
+                          { label: 'Hero Text', name: 'hero_text', widget: 'string' },
+                          { label: 'Hero Image', name: 'hero_image', widget: 'image' },
+                        ]
+                      },
+                      { 
+                        label: 'Themes Section Fields',
+                        value: 'themes',
+                        fields: [
+                          { label: 'Text', name: 'themes_text', widget: 'string' },
+                          { label: 'Background Color', name: 'themes_bg_color', widget: 'color' },
+                          # Add more fields specific to Themes Section
+                        ]
+                      },
+                      # Add more conditions for other include types
+                    ]
+                  }
                 ]}
+
       - label: 'Conferences Page'
         name: 'conferences'
         file: 'conferences.md'
