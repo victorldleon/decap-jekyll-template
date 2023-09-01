@@ -3,3 +3,5 @@ items:
     link: /
   - name: Conferences
     link: /conferences.html
+  - name: Admin
+    link: /admin/

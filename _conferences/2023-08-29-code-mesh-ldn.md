@@ -1,7 +1,7 @@
 ---
 layout: conference
 title: CODE MESH LDN
-date: 2023-08-28T01:27:45.671Z
+date: 2023-08-29T23:04:41.178Z
 speaker:
   - Victor De León
   - SIMON PEYTON
