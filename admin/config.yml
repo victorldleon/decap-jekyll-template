@@ -73,40 +73,29 @@ collections:
         fields:
           - { label: 'Title', name: 'title', widget: 'string' }
           - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'default' }
-          - label: 'Content Types'
+          - label: 'Content'
             name: 'content'
             widget: 'list'
             fields:
-              - { label: 'Include', name: 'include', widget: 'object', fields: [
-                  { label: 'Include Type', name: 'include_type', widget: 'select', options: [
-                      { label: 'Hero', value: 'hero' },
-                      { label: 'Themes Section', value: 'themes' },
-                      # Add more options for different include types
-                  ] },
-                  { label: 'Include Data', name: 'include_data', widget: 'conditional', 
-                    default: {},
-                    conditions: [
-                      { 
-                        label: 'Hero Fields',
-                        value: 'hero',
-                        fields: [
-                          { label: 'Hero Text', name: 'hero_text', widget: 'string' },
-                          { label: 'Hero Image', name: 'hero_image', widget: 'image' },
-                        ]
-                      },
-                      { 
-                        label: 'Themes Section Fields',
-                        value: 'themes',
-                        fields: [
-                          { label: 'Text', name: 'themes_text', widget: 'string' },
-                          { label: 'Background Color', name: 'themes_bg_color', widget: 'color' },
-                          # Add more fields specific to Themes Section
-                        ]
-                      },
-                      # Add more conditions for other include types
-                    ]
-                  }
-                ]}
+              - {
+                  label: 'Content Type',
+                  name: 'contentType',
+                  widget: 'relation',
+                  collection: 'contentTypes',
+                  display_fields: [internal_name],
+                  search_fields: [internal_name],
+                  value_field: 'type',
+                }
+              - {
+                  label: 'Content Entity',
+                  name: 'contentEntity',
+                  widget: 'relation',
+                  collection: 'contentEntities',
+                  display_fields: [internal_name],
+                  search_fields: [internal_name],
+                  value_field: 'id',
+                }
+              
 
       - label: 'Conferences Page'
         name: 'conferences'
