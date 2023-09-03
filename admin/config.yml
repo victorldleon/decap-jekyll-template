@@ -62,6 +62,7 @@ collections:
       - { label: 'Display Name', name: 'display_name', widget: 'string' }
       - { label: 'Position', name: 'position', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
+      
   - name: 'pages'
     label: 'Pages'
     editor:
@@ -71,25 +72,36 @@ collections:
         name: 'index'
         file: 'index.md'
         fields:
-          - { label: 'Title', name: 'title', widget: 'string' }
-          - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'default' }
+          - label: 'Title'
+            name: 'title'
+            widget: 'string'
+          - label: 'Layout'
+            name: 'layout'
+            widget: 'hidden'
+            default: 'default'
           - label: 'Content'
             name: 'content'
             widget: 'list'
             fields:
-              - {
-                  label: 'Content Section',
-                  name: 'content_section',
-                  widget: 'relation',
-                  collection: 'contentSections',
-                  display_fields: [internal_name],
-                  search_fields: [internal_name],
-                  value_field: 'type',
-                  fields: 
-                    - { label: 'Internal Name', name: 'internalName', widget: 'string' }
-                    - { label: 'Content Type', name: 'contentType', widget: 'relation', collection: 'contentTypes', display_fields: [internal_name], search_fields: [internal_name], value_field: 'id' }
-                }
-              
+              - label: 'Content Section'
+                name: 'content_section'
+                widget: 'relation'
+                collection: 'contentSections'
+                display_fields: [internal_name]
+                search_fields: [internal_name]
+                value_field: 'type'
+                fields: 
+                  - label: 'Internal Name'
+                    name: 'internalName'
+                    widget: 'string'
+                  - label: 'Content Type'
+                    name: 'contentType'
+                    widget: 'relation'
+                    collection: 'contentTypes'
+                    display_fields: [internal_name]
+                    search_fields: [internal_name]
+                    value_field: 'id'
+
 
       - label: 'Conferences Page'
         name: 'conferences'
