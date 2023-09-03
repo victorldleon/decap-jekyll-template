@@ -83,7 +83,7 @@ collections:
                       { label: 'Themes Section', value: 'themes' },
                       # Add more options for different include types
                   ] },
-                  { label: 'Include Type', name: 'include_type', widget: 'select', options: [
+                  { label: 'Include Type', name: 'include_types', widget: 'select', options: [
                       { label: 'Hero', value: 'hero' },
                       { label: 'Themes Section', value: 'themes' },
                       # Add more options for different include types
