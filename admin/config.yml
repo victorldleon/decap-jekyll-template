@@ -78,16 +78,15 @@ collections:
             widget: 'list'
             fields:
               - { label: 'Include', name: 'include', widget: 'object', fields: [
-                  { label: 'Include Type', name: 'include_type', widget: 'select', options: [
+                  { label: 'Internal Name', name: 'internalName', widget: 'string' },
+                  { label: 'Content Type', name: 'contentType', widget: 'select', options: [
                       { label: 'Hero', value: 'hero' },
                       { label: 'Themes Section', value: 'themes' },
                       # Add more options for different include types
                   ] },
-                  { label: 'Include Type', name: 'include_types', widget: 'select', options: [
-                      { label: 'Hero', value: 'hero' },
-                      { label: 'Themes Section', value: 'themes' },
-                      # Add more options for different include types
-                  ] },
+                  { label: 'heading', name: 'heading', widget: 'string' },
+                  { label: 'Text', name: 'text', widget: 'string' },
+                  # Add more fields to be displayed according to contentType selected
                 ]}
 
       - label: 'Conferences Page'
