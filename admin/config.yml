@@ -87,7 +87,7 @@ collections:
                   value_field: 'type',
                   fields: [
                     - { label: 'Internal Name', name: 'internalName', widget: 'string' }
-                    - { label: 'Content Type', name: 'contentType', widget: 'relation', collection: 'contentTypes', display_fields: [internal_name], search_fields: [internal_name], value_field: 'type', }
+                    - { label: 'Content Type', name: 'contentType', widget: 'relation', collection: 'contentTypes', display_fields: [internal_name], search_fields: [internal_name], value_field: 'id' }
                   ]
                 }
               
