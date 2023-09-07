@@ -2,13 +2,18 @@
 title: Title for the index page
 content:
   - include:
+      internalName: Index hero
       contentType: hero
-      internalName: Hero - Index
-      heading: This is the Heading for the Index Hero
-      text: This is the description for the Hero at the index page.
+      heading: Index hero heading
+      text: Index hero  text
   - include:
-      contentType: themes
-      internalName: Themes Section - Index
-      heading: This is the heading for the Themes Section at the index page
-      text: This is the text description for the Themes Section at the index page
+      internalName: Speakers Home
+      contentType: speakers
+      heading: Speakers title home
+      text: speakers title home
+  - include:
+      internalName: Index - Conferences list
+      contentType: conferences
+      heading: Conferences list
+      text: Index conferences list text
 ---
