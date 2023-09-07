@@ -81,6 +81,8 @@ collections:
                   { label: 'Internal Name', name: 'internalName', widget: 'string' },
                   { label: 'Content Type', name: 'contentType', widget: 'select', options: [
                       { label: 'Hero', value: 'hero' },
+                      { label: 'Conferences', value: 'conferences' },
+                      { label: 'Speakers', value: 'speakers' },
                       { label: 'Themes Section', value: 'themes' },
                       # Add more options for different include types
                   ] },
