@@ -17,3 +17,11 @@ content:
       heading: Conferences list
       text: Index conferences list text
 ---
+
+{% include navigation.html %}
+{% include hero.html %}
+<div class="container">
+    {% include conferences.html %}
+    {% include media.html %}
+</div>
+
