@@ -72,7 +72,7 @@ collections:
         file: 'index.md'
         fields:
           - { label: 'Title', name: 'title', widget: 'string' }
-          - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'default' }
+          - { label: 'Layout', name: 'layout', widget: 'string', default: 'default' }
           - label: 'Content Types'
             name: 'content'
             widget: 'list'
