@@ -1,17 +1,19 @@
 ---
 title: Index Page
 layout: default
-content:
-  - include:
-      internalName: Hero
+page_content:
+    - internalName: Hero
       contentType: hero
       heading: Heading text
-      text: text
-  - include:
-      internalName: Speakers section
+      text: hero
+    - internalName: Speakers section
       contentType: speakers
       heading: speakers section title
       text: speakers section text
 ---
 
 hola
+{% for item in page.page_content %}
+{{ item.contentType }}
+{% endfor %}
+adios
