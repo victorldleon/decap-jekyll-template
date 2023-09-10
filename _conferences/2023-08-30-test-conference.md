@@ -8,5 +8,7 @@ speaker:
   - "Joe "
 bg_img: /assets/img/uploads/bg-codesync-conf.jpeg
 logo_img: /assets/img/uploads/code-mesh-logo.png
+location: Warsaw
+past: false
 ---
 fsdkjfsdl
