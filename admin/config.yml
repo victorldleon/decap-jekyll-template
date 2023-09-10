@@ -1,123 +1,171 @@
 backend:
-  name: github
-  repo: victorldleon/decap-jekyll-template
-  branch: master # Branch to update (main by default)
+    name: github
+    repo: victorldleon/decap-jekyll-template
+    branch: master # Branch to update (main by default)
 
-media_folder: "assets/img/uploads" # Folder where user uploaded files should go
+media_folder: 'assets/img/uploads' # Folder where user uploaded files should go
 
 collections:
-  - name: 'conferences'
-    label: 'Conferences'
-    folder: '_conferences/'
-    create: true
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
-    editor:
-      preview: false
-    fields:
-      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'conference' }
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - {
-          label: 'Speaker',
-          name: 'speaker',
-          multiple: true,
-          widget: 'relation',
-          collection: 'speakers',
-          display_fields: [display_name],
-          search_fields: [display_name],
-          value_field: 'name',
-        }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
-  - name: 'media'
-    label: 'Media'
-    folder: '_media/'
-    create: true
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
-    editor:
-      preview: false
-    fields:
-      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'media' }
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - {
-          label: 'Speaker',
-          name: 'speaker',
-          widget: 'relation',
-          collection: 'speakers',
-          display_fields: [display_name],
-          search_fields: [display_name],
-          value_field: 'name',
-        }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
-      
-  - name: 'speakers'
-    label: 'Speakers'
-    folder: '_speakers/'
-    create: true
-    editor:
-      preview: false
-    fields:
-      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'speaker' }
-      - { label: 'Short Name', name: 'name', widget: 'string' }
-      - { label: 'Display Name', name: 'display_name', widget: 'string' }
-      - { label: 'Position', name: 'position', widget: 'string' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
-
-
-  - name: 'pages'
-    label: 'Pages'
-    editor:
-      preview: false
-    files:
-       - label: 'Index Page'
-        name: 'index'
-        file: 'index.md'
-        fields:
+    - name: 'conferences'
+      label: 'Conferences'
+      folder: '_conferences/'
+      create: true
+      slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+      editor:
+          preview: false
+      fields:
+          - {
+                label: 'Layout',
+                name: 'layout',
+                widget: 'hidden',
+                default: 'conference',
+            }
           - { label: 'Title', name: 'title', widget: 'string' }
-          - { label: 'Layout', name: 'layout', widget: 'string', default: 'default' }
-          - label: 'Content'
-            name: 'content'
-            widget: 'list'
-            fields:
-              - { label: 'Internal Name', name: 'internalName', widget: 'string' }
-              - { label: 'Content Type', name: 'contentType', widget: 'select', options: [
-                  { label: 'Hero', value: 'hero' },
-                  { label: 'Conferences', value: 'conferences' },
-                  { label: 'Speakers', value: 'speakers' },
-                  { label: 'Themes Section', value: 'themes' },
-                  # Add more options for different include types
-                ]}
-              - { label: 'Heading', name: 'heading', widget: 'string' }
-              - { label: 'Text', name: 'text', widget: 'string' }
-
-
-      - label: 'Conferences Page'
-        name: 'conferences'
-        file: 'conferences.md'
-        fields:
-          - { label: 'Title', name: 'title', widget: 'string' }
-          - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'conference' }
-          - { label: 'Past', name: 'past', widget: 'boolean', default: false }
+          - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+          - {
+                label: 'Speaker',
+                name: 'speaker',
+                multiple: true,
+                widget: 'relation',
+                collection: 'speakers',
+                display_fields: [display_name],
+                search_fields: [display_name],
+                value_field: 'name',
+            }
           - { label: 'Body', name: 'body', widget: 'markdown' }
-      - label: 'About Page'
-        name: 'about'
-        file: 'about.md'
-        fields:
+    - name: 'media'
+      label: 'Media'
+      folder: '_media/'
+      create: true
+      slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+      editor:
+          preview: false
+      fields:
+          - {
+                label: 'Layout',
+                name: 'layout',
+                widget: 'hidden',
+                default: 'media',
+            }
           - { label: 'Title', name: 'title', widget: 'string' }
-          - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'about' }
+          - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+          - {
+                label: 'Speaker',
+                name: 'speaker',
+                widget: 'relation',
+                collection: 'speakers',
+                display_fields: [display_name],
+                search_fields: [display_name],
+                value_field: 'name',
+            }
           - { label: 'Body', name: 'body', widget: 'markdown' }
-  - name: 'config'
-    label: 'Config'
-    editor:
-      preview: false
-    files:
-      - label: 'Navigation'
-        name: 'navigation'
-        file: '_data/navigation.yml'
-        fields:
-          - label: 'Navigation Items'
-            name: 'items'
-            widget: 'list'
+
+    - name: 'speakers'
+      label: 'Speakers'
+      folder: '_speakers/'
+      create: true
+      editor:
+          preview: false
+      fields:
+          - {
+                label: 'Layout',
+                name: 'layout',
+                widget: 'hidden',
+                default: 'speaker',
+            }
+          - { label: 'Short Name', name: 'name', widget: 'string' }
+          - { label: 'Display Name', name: 'display_name', widget: 'string' }
+          - { label: 'Position', name: 'position', widget: 'string' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
+
+    - name: 'pages'
+      label: 'Pages'
+      editor:
+          preview: false
+      files:
+          - label: 'Index Page'
+            name: 'index'
+            file: 'index.md'
             fields:
-              - { label: Name, name: name, widget: string }
-              - { label: Link, name: link, widget: string }
+                - { label: 'Title', name: 'title', widget: 'string' }
+                - {
+                      label: 'Layout',
+                      name: 'layout',
+                      widget: 'string',
+                      default: 'default',
+                  }
+                - label: 'Content'
+                  name: 'content'
+                  widget: 'list'
+                  fields:
+                      - {
+                            label: 'Internal Name',
+                            name: 'internalName',
+                            widget: 'string',
+                        }
+                      - {
+                            label: 'Content Type',
+                            name: 'contentType',
+                            widget: 'select',
+                            options: [
+                                    { label: 'Hero', value: 'hero' },
+                                    {
+                                        label: 'Conferences',
+                                        value: 'conferences',
+                                    },
+                                    { label: 'Speakers', value: 'speakers' },
+                                    {
+                                        label: 'Themes Section',
+                                        value: 'themes',
+                                    },
+                                    # Add more options for different include types
+                                ],
+                        }
+                      - { label: 'Heading', name: 'heading', widget: 'string' }
+                      - { label: 'Text', name: 'text', widget: 'string' }
+
+          - label: 'Conferences Page'
+            name: 'conferences'
+            file: 'conferences.md'
+            fields:
+                - { label: 'Title', name: 'title', widget: 'string' }
+                - {
+                      label: 'Layout',
+                      name: 'layout',
+                      widget: 'hidden',
+                      default: 'conference',
+                  }
+                - {
+                      label: 'Past',
+                      name: 'past',
+                      widget: 'boolean',
+                      default: false,
+                  }
+                - { label: 'Body', name: 'body', widget: 'markdown' }
+          - label: 'About Page'
+            name: 'about'
+            file: 'about.md'
+            fields:
+                - { label: 'Title', name: 'title', widget: 'string' }
+                - {
+                      label: 'Layout',
+                      name: 'layout',
+                      widget: 'hidden',
+                      default: 'about',
+                  }
+                - { label: 'Body', name: 'body', widget: 'markdown' }
+    - name: 'config'
+      label: 'Config'
+      editor:
+          preview: false
+      files:
+          - label: 'Navigation'
+            name: 'navigation'
+            file: '_data/navigation.yml'
+            fields:
+                - label: 'Navigation Items'
+                  name: 'items'
+                  widget: 'list'
+                  fields:
+                      - { label: Name, name: name, widget: string }
+                      - { label: Link, name: link, widget: string }
