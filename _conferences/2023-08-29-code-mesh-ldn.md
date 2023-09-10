@@ -5,8 +5,8 @@ date: 2023-08-29T23:04:41.178Z
 speaker:
   - Victor De León
   - SIMON PEYTON
-bg_img: /assets/img/uploads/code-mesh-logo.png
-logo_img: /assets/img/uploads/bg-codesync-conf.jpeg
+bg_img: /assets/img/uploads/bg-codesync-conf.jpeg
+logo_img: /assets/img/uploads/aed29706231a343796d1d53a8b64659f728e7426.png
 location: london
 past: false
 ---
