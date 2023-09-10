@@ -6,6 +6,10 @@ page_content:
     contentType: hero
     heading: Heading for Hero Section at index
     text: Text for hero section at index
+  - contentType: media
+    internalName: Media Section - Index
+    heading: "Media Section "
+    text: "Media Section "
   - internalName: Conferences section - Index
     contentType: conferences
     heading: Heading for conferences section at index
