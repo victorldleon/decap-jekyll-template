@@ -32,6 +32,18 @@ collections:
                 search_fields: [display_name],
                 value_field: 'name',
             }
+          - {
+                label: 'Background Image',
+                name: 'bg_img',
+                widget: 'image',
+                required: false,
+            }
+          - {
+                label: 'Logo Image',
+                name: 'logo_img',
+                widget: 'image',
+                required: false,
+            }
           - { label: 'Body', name: 'body', widget: 'markdown' }
     - name: 'media'
       label: 'Media'
