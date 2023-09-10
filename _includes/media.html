@@ -6,24 +6,24 @@
             </h2>
         </div>
         <div id="macy-container">
-            {% assign sorted = site.posts | sort: 'date') %}
-            {% for post in sorted limit: 7%}
+            {% assign sorted = site.media | sort: 'date') %}
+            {% for media in sorted limit: 7%}
 
-                {% if post.type == 'article' %}
+                {% if media.type == 'article' %}
                     <div class="col-4 t-col-12 t-mt-40 article__box" data-type="article">
                         <h3 class="heading heading--normal">
-                            <a class="heading heading--normal heading--roboto article__title" href="{{site.baseurl}}{{ post.url }}">{{ post.title }}
+                            <a class="heading heading--normal heading--roboto article__title" href="{{site.baseurl}}{{ media.url }}">{{ media.title }}
                             </a>
                         </h3>
                         <picture>
-                            {% if post.image_url %}
-                                <img alt="{{ post.title }}" class="tile__logo lazy" data-src="{{site.baseurl}}{{ post.image_url}}">
+                            {% if media.image_url %}
+                                <img alt="{{ media.title }}" class="tile__logo lazy" data-src="{{site.baseurl}}{{ media.image_url}}">
                                 {% else %}
                             {% endif %}
                         </picture>
                         <div class="article__desc">
-                            <p class="paragraph">{{ post.excerpt }}</p>
-                            <a href="{{site.baseurl}}{{ post.url }}">READ MORE</a>
+                            <p class="paragraph">{{ media.excerpt }}</p>
+                            <a href="{{site.baseurl}}{{ media.url }}">READ MORE</a>
                         </div>
                         <div class="hashtags">
                             <ul></ul>
@@ -31,9 +31,9 @@
                     </div>
                 {% endif %}
 
-                {% if post.type == 'video' %}
+                {% if media.type == 'video' %}
                     <div class="video__container col-4 t-col-6 m-col-12" data-type="video">
-                        <a class="video__stream lazy" data-bg="url('{{ post.background_image }}')" href="{{site.baseurl}}{{ post.url }}" style="display:block;">
+                        <a class="video__stream lazy" data-bg="url('{{ media.background_image }}')" href="{{site.baseurl}}{{ media.url }}" style="display:block;">
                             <div class="plyr__play-large">
                                 <svg height="100%" viewbox="0 0 18 18" width="100%">
                                     <path d="M15.562 8.1L3.87.225C3.052-.337 2 .225 2 1.125v15.75c0 .9 1.052 1.462 1.87.9L15.563 9.9c.584-.45.584-1.35 0-1.8z"></path>
@@ -42,13 +42,13 @@
                         </a>
                         <div class="video__desc">
                             <h3 class="heading heading--normal heading--roboto video__title">
-                                <a href="{{site.baseurl}}{{ post.url }}">
-                                    {{ post.title }}
+                                <a href="{{site.baseurl}}{{ media.url }}">
+                                    {{ media.title }}
                                 </a>
                                 <span>///</span>
                                 {% for speaker in site.speakers %}
-                                    {% for post_speaker in post.speakers %}
-                                        {% if post_speaker == speaker.path %}
+                                    {% for media_speaker in media.speakers %}
+                                        {% if media_speaker == speaker.path %}
                                             <a href="{{site.baseurl}}/speakers/{{ speaker.path | remove: "_speakers/" | split: "." | first }}">{{speaker.name}}
                                                 {{speaker.lastname}}
                                             </a>
@@ -58,7 +58,7 @@
                             </h3>
                             <div class="hashtags">
                                 <ul>
-                                    {% assign tags_list = post.tags %}
+                                    {% assign tags_list = media.tags %}
                                     {% if tags_list.first[0] == null %}
                                         {% for tag in tags_list %}
                                             <li>
@@ -79,21 +79,20 @@
                                 <p class="paragraph paragraph--robotomono">SHARE</p>
                                 <div class="social-buttons">
                                     <ul>
-                                        <li><a href="http://www.facebook.com/sharer.php?u=https://www.youtube.com/watch?v={{ post.youtube_id }}" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" class="svg-inline--fa fa-facebook-f fa-w-9" data-icon="facebook-f" data-prefix="fab" viewbox="0 0 264 512" xmlns="http://www.w3.org/2000/svg"><path d="M76.7 512V283H0v-91h76.7v-71.7C76.7 42.4 124.3 0 193.8 0c33.3 0 61.9 2.5 70.2 3.6V85h-48.2c-37.8 0-45.1 18-45.1 44.3V192H256l-11.7 91h-73.6v229" fill="currentColor"/></svg></a></li>
-                                        <li><a href="https://twitter.com/intent/tweet?text={{ post.title }} https://www.youtube.com/watch?v={{ post.youtube_id }}" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" class="svg-inline--fa fa-twitter fa-w-16" data-icon="twitter" data-prefix="fab" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" fill="currentColor"/></svg></a></li>
-                                        <li><a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.youtube.com/watch?v={{ post.youtube_id }}" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" class="svg-inline--fa fa-linkedin-in fa-w-14" data-icon="linkedin-in" data-prefix="fab" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M100.3 448H7.4V148.9h92.9V448zM53.8 108.1C24.1 108.1 0 83.5 0 53.8S24.1 0 53.8 0s53.8 24.1 53.8 53.8-24.1 54.3-53.8 54.3zM448 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448h-.1z" fill="currentColor"/></svg></a></li>
-                                        <li><a href="mailto:?subject={{ post.title }}&body=Take a look at this: https://www.youtube.com/watch?v={{ post.youtube_id}}" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" class="svg-inline--fa fa-envelope fa-w-16" data-icon="envelope" data-prefix="fas" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z" fill="currentColor"/></svg></a></li>
+                                        <li><a href="http://www.facebook.com/sharer.php?u=https://www.youtube.com/watch?v={{ media.youtube_id }}" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" class="svg-inline--fa fa-facebook-f fa-w-9" data-icon="facebook-f" data-prefix="fab" viewbox="0 0 264 512" xmlns="http://www.w3.org/2000/svg"><path d="M76.7 512V283H0v-91h76.7v-71.7C76.7 42.4 124.3 0 193.8 0c33.3 0 61.9 2.5 70.2 3.6v82.8h-48.2c-38 0-45.3 18-45.3 44.3v58.1h90.5l-11.8 91h-78.7v229"></path></svg></a>
+                                        </li>
+                                        <li><a href="https://twitter.com/share?url=https://www.youtube.com/watch?v={{ media.youtube_id }}&amp;text={{ media.title }}&amp;via={{ site.author.twitter }}" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" class="svg-inline--fa fa-twitter fa-w-16" data-icon="twitter" data-prefix="fab" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447 .974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498 .974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-90.661-48.387-90.661-95.425 0-.975.025-1.624.05-2.599 15.126 8.422 32.5 13.172 51.206 13.724a97.63 97.63 0 0 1-30.433-13.172c-.975 0-1.624.025-2.599.025 0 66.255 47.133 121.531 109.442 134.083-11.498 3.171-23.645 4.872-36.142 4.872-8.824 0-17.648- .864-26.296-2.422 17.648 55.126 68.8 95.197 129.33 95.197-47.253 37.031-106.903 59.089-171.86 59.089-11.176 0-22.353-.648-33.529-1.624 61.19 39.345 133.874 62.339 211.754 62.339"></path></svg></a>
+                                        </li>
+                                        <li><a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.youtube.com/watch?v={{ media.youtube_id }}&amp;title={{ media.title }}&amp;summary={{ media.excerpt | strip_html | escape }}" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" class="svg-inline--fa fa-linkedin-in fa-w-14" data-icon="linkedin-in" data-prefix="fab" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M100.28 448h83.43V302.8c0-3.63.22-7.22.45-10.67h-1.12c-2.49 3.9-4.95 7.76-8.61 11.06-11.19 10.05-23.34 17.86-39.06 17.86-26.65 0-46.54-19.19-46.54-44.68 0-25.94 20.7-44.62 49.02-44.62 27.58 0 44.89 18.74 45.63 45.56.24 2.92.44 5.87.44 9.37V224h-83.43c1.12 15.1 0 30.17 0 45.27h83.43v-31.95c-1.49-2.28-3.07-4.49-4.43-6.87h1.12v38.82h83.43V224h-83.43c1.12 15.1 0 30.17 0 45.27h83.43v-62.79c0-40.7-8.03-73.92-26.4-98.67-17.67-23.72-43.8-36.22-76.33-36.22-55.52 0-92.04 36.69-92.04 95.47v38.21H17.85C7.99 224 .03 231.96 0 241.81v48.07c.03 9.86 7.99 17.8 17.85 17.8h83.43V448zM7.99 192c3.92 0 7.12-3.2 7.12-7.12 0-3.92-3.2-7.12-7.12-7.12-3.92 0-7.12 3.2-7.12 7.12 0 3.92 3.2 7.12 7.12 7.12zM0 66.87C0 29.93 29.94 0 66.88 0h313.77C418.06 0 448 29.94 448 66.87v377.7c0 36.94-29.94 66.87-66.87 66.87H66.88C29.94 512 0 482.06 0 445.13V66.87z"></path></svg></a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
                 {% endif %}
-            {% endfor %}
-        </div>
 
-        <div class="clear mt--20">
-            <a class="btn btn--all btn--pink triangle-left-full" href="{{site.baseurl}}/media/">ALL MEDIA</a>
+            {% endfor %}
         </div>
     </div>
 </section>
