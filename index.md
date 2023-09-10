@@ -19,6 +19,10 @@ pageContent:
     contentType: conferences
     heading: Heading for conferences section at index
     text: Text for conferences section at index
+  - contentType: speakers
+    internalName: Speakers Section - Index
+    heading: Heading of Speakers section at index
+    text: Text of Speakers section at index
 ---
 
 hola
