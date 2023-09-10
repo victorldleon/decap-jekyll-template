@@ -62,34 +62,34 @@ collections:
       - { label: 'Display Name', name: 'display_name', widget: 'string' }
       - { label: 'Position', name: 'position', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
+
+
   - name: 'pages'
     label: 'Pages'
     editor:
       preview: false
     files:
-      - label: 'Index Page'
+       - label: 'Index Page'
         name: 'index'
         file: 'index.md'
         fields:
           - { label: 'Title', name: 'title', widget: 'string' }
           - { label: 'Layout', name: 'layout', widget: 'string', default: 'default' }
-          - label: 'Content Types'
+          - label: 'Content'
             name: 'content'
             widget: 'list'
             fields:
-              - { label: 'Include', name: 'include', widget: 'object', fields: [
-                  { label: 'Internal Name', name: 'internalName', widget: 'string' },
-                  { label: 'Content Type', name: 'contentType', widget: 'select', options: [
-                      { label: 'Hero', value: 'hero' },
-                      { label: 'Conferences', value: 'conferences' },
-                      { label: 'Speakers', value: 'speakers' },
-                      { label: 'Themes Section', value: 'themes' },
-                      # Add more options for different include types
-                  ] },
-                  { label: 'heading', name: 'heading', widget: 'string' },
-                  { label: 'Text', name: 'text', widget: 'string' },
-                  # Add more fields to be displayed according to contentType selected
+              - { label: 'Internal Name', name: 'internalName', widget: 'string' }
+              - { label: 'Content Type', name: 'contentType', widget: 'select', options: [
+                  { label: 'Hero', value: 'hero' },
+                  { label: 'Conferences', value: 'conferences' },
+                  { label: 'Speakers', value: 'speakers' },
+                  { label: 'Themes Section', value: 'themes' },
+                  # Add more options for different include types
                 ]}
+              - { label: 'Heading', name: 'heading', widget: 'string' }
+              - { label: 'Text', name: 'text', widget: 'string' }
+
 
       - label: 'Conferences Page'
         name: 'conferences'

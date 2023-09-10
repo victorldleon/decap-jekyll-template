@@ -1,38 +1,17 @@
 ---
-title: Title for the index page
 layout: default
+title: Index Page
 content:
-  - include:
-      internalName: Index hero
-      contentType: hero
-      heading: Index hero heading
-      text: Index hero text
-  - include:
-      internalName: Speakers Home
-      contentType: speakers
-      heading: Speakers title home
-      text: speakers title home
-  - include:
-      internalName: Index - Conferences list
-      contentType: conferences
-      heading: Conferences list
-      text: Index conferences list text
+  - internalName: hero
+    contentType: hero
+    heading: Welcome to Our Conference
+    text: We are glad to have you here.
+  - internalName: speakers
+    contentType: speakers
+    heading: Meet Our Speakers
+    text: Here are some of our notable speakers.
 ---
 
-{% include navigation.html %}
-{% for item in page.content %}
-    {% if item.include.contentType == "hero" %}
-        {% include hero.html %}
-    {% endif %}
+{% for content in page.content %}
+  {% include {{ content.contentType | default: "default" }}.html %}
 {% endfor %}
-<div class="container">
-    {% for item in page.content %}
-        {% if item.include.contentType == "speakers" %}
-            {% include speakers.html  %}
-        {% elsif item.include.contentType == "conferences" %}
-            {% include conferences.html  %}
-        {% elsif item.include.contentType == "media" %}
-            {% include media.html  %}
-        {% endif %}
-    {% endfor %}
-</div> 
