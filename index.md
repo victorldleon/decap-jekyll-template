@@ -16,8 +16,15 @@ page_content:
       text: Text of Speakers section at index
 ---
 
-hola
 {% for item in page.page_content %}
-{{ item.contentType }}
+{% case item.contentType %}
+{% when 'hero' %}
+{% include hero.html %}
+{% when 'speakers' %}
+{% include speakers.html %}
+{% when 'conferences' %}
+{% include conferences.html %}
+{% when 'themes' %}
+{% include themes.html %}
+{% endcase %}
 {% endfor %}
-adios
