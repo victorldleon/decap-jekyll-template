@@ -2,15 +2,6 @@
 title: Index Page
 layout: default
 page_content:
-    - internalName: Hero
-      contentType: hero
-      heading: Heading text
-      text: hero
-    - internalName: Speakers section
-      contentType: speakers
-      heading: speakers section title
-      text: speakers section text
-pageContent:
     - internalName: Hero Section - Index
       contentType: hero
       heading: Heading for Hero Section at index
@@ -19,6 +10,10 @@ pageContent:
       contentType: conferences
       heading: Heading for conferences section at index
       text: Text for conferences section at index
+    - contentType: speakers
+      internalName: Speakers Section - Index
+      heading: Heading of Speakers section at index
+      text: Text of Speakers section at index
 ---
 
 hola

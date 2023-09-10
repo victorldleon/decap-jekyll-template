@@ -95,7 +95,7 @@ collections:
                       default: 'default',
                   }
                 - label: 'Page Content'
-                  name: 'pageContent'
+                  name: 'page_content'
                   widget: 'list'
                   fields:
                       - {
