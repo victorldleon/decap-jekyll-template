@@ -44,6 +44,8 @@ collections:
                 widget: 'image',
                 required: false,
             }
+          - { label: 'Location', name: 'location', widget: 'string' }
+          - { label: 'Past', name: 'past', widget: 'boolean', default: false }
           - { label: 'Body', name: 'body', widget: 'markdown' }
     - name: 'media'
       label: 'Media'
