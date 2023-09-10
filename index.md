@@ -1,15 +1,17 @@
 ---
-layout: default
 title: Index Page
+layout: default
 content:
-    - internalName: hero
+  - include:
+      internalName: Hero
       contentType: hero
-      heading: Welcome to Our Conference
-      text: We are glad to have you here.
-    - internalName: speakers
+      heading: Heading text
+      text: text
+  - include:
+      internalName: Speakers section
       contentType: speakers
-      heading: Meet Our Speakers
-      text: Here are some of our notable speakers.
+      heading: speakers section title
+      text: speakers section text
 ---
 
 hola
