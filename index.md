@@ -18,6 +18,10 @@ page_content:
     contentType: speakers
     heading: Heading of Speakers section at index
     text: Text of Speakers section at index
+  - internalName: Speakers Section - Index - bottom
+    contentType: speakers
+    heading: "-"
+    text: "-"
 ---
 
 {% for item in page.page_content %}
