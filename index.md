@@ -35,8 +35,6 @@ page_content:
 {% include speakers.html %}
 {% when 'conferences' %}
 {% include conferences.html %}
-{% when 'themes' %}
-{% include themes.html %}
 {% when 'media' %}
 {% include media.html %}
 

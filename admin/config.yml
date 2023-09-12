@@ -111,14 +111,7 @@ collections:
           - { label: 'Position', name: 'position', widget: 'string' }
           - { label: 'Picture', name: 'pic_url', widget: 'image' }
           - { label: 'Body', name: 'body', widget: 'markdown' }
-    - name: 'themes'
-      label: 'Themes'
-      folder: '_themes/'
-      create: true
-      editor:
-          preview: false
-      fields:
-          - { label: 'Text', name: 'text', widget: 'string' }
+
 
     - name: 'pages'
       label: 'Pages'
