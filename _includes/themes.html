@@ -2,7 +2,10 @@
     <div class="container--small">
         <h3 class="heading heading--large">THEMES</h3>
         <div class="grid-themes mt--50 t-mt-00 t-mb-50">
-            {{ page.conference_themes_content }}
+            <!-- create jekyll for loop for the themes collection -->
+            {% for theme in site.themes %}
+             {{ theme.title }}
+            {% endfor %}
         </div>
     </div>
 </section>

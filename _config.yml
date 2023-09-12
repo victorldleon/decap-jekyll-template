@@ -63,3 +63,6 @@ collections:
   speakers:
     output: true
     sort_by: relevance
+  themes:
+    output: true
+    sort_by: relevance
