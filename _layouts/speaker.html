@@ -3,16 +3,5 @@ layout: default
 ---
 
 {% include navigation.html %}
-
-<div class="hero">
-    <h1>{{ page.display_name }}</h1>
-</div>
-
-<div class="container">
-  <p>
-    {{ page.date | date_to_string }} 
-  </p>  
-  
-  {{ content }}
-</div>
+{% include speaker-hero.html %}
 
