@@ -5,3 +5,5 @@ items:
     link: /conferences.html
   - name: Admin
     link: /admin/
+  - name: Test link
+    link: /test
