@@ -2,9 +2,8 @@
 layout: default
 ---
 
-{% include navigation.html %} {% include hero.html %}
-<div class="container">
-    <p>{{ page.date | date_to_string }}</p>
-
+<main class="conference">
+    {% include navigation.html %} {% include conference-hero.html %}
     {% include speakers.html %} {{ content }}
-</div>
+</main>
+
