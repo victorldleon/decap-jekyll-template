@@ -2,14 +2,14 @@
 title: Index Page
 layout: default
 page_content:
-  - internalName: Media Section - Index
-    contentType: media
-    heading: "Media Section "
-    text: "Media Section "
   - internalName: Hero Section - Index
     contentType: hero
     heading: Heading for Hero Section at index
     text: Text for hero section at index
+  - internalName: Media Section - Index
+    contentType: media
+    heading: "Media Section "
+    text: "Media Section "
   - internalName: Conferences section - Index
     contentType: conferences
     heading: Heading for conferences section at index
